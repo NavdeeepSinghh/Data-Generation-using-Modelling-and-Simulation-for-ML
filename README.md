@@ -190,7 +190,3 @@ The complete implementation includes:
 
 📄 `Data_Generation.ipynb`
 
----
-
-## 📁 Repository Structure
-
