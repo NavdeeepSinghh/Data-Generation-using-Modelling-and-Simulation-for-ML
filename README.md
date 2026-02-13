@@ -5,11 +5,11 @@
 
 ## 📌 Project Overview
 
-This project demonstrates **synthetic data generation using physics-based modelling and simulation**, followed by machine learning model training and evaluation.
+This project demonstrates synthetic data generation using physics-based modelling and simulation, followed by machine learning model training and evaluation.
 
-A physics simulator (PyBullet) is used to generate structured numerical data under controlled physical conditions. The generated dataset is then used to train and compare multiple regression-based machine learning models.
+A PyBullet-based physics simulator is used to generate structured numerical data under controlled physical conditions. The generated dataset is then used to train and compare multiple regression-based machine learning models.
 
-The complete workflow — simulation, dataset creation, model training, and evaluation — is implemented in **Google Colab**, with results hosted on GitHub.
+The complete workflow — simulation, dataset generation, model training, and evaluation — is implemented using Google Colab, and results are hosted on GitHub.
 
 ---
 
@@ -17,13 +17,15 @@ The complete workflow — simulation, dataset creation, model training, and eval
 
 ### 🔹 PyBullet – Physics Simulation Engine
 
-PyBullet is an open-source physics engine widely used in:
-- Robotics
-- Rigid body dynamics
-- Reinforcement learning research
-- Simulation-based ML workflows
+PyBullet is an open-source physics engine widely used for:
+
+- Rigid body dynamics  
+- Robotics research  
+- Reinforcement learning  
+- Simulation-based ML pipelines  
 
 It accurately models:
+
 - Gravity  
 - Friction  
 - Collision  
@@ -32,8 +34,8 @@ It accurately models:
 ### ✅ Why PyBullet?
 
 - Fully Python-based  
-- Google Colab compatible  
-- Generates continuous numerical outputs  
+- Compatible with Google Colab  
+- Produces continuous numerical outputs  
 - Ideal for synthetic ML dataset generation  
 
 ---
@@ -42,7 +44,7 @@ It accurately models:
 
 A rigid cube is dropped from a specified height onto a flat surface under varying physical conditions.
 
-The simulation captures how physical parameters influence **energy loss during impact and motion**.
+The simulation captures how different physical parameters influence **energy loss during impact and motion**.
 
 ---
 
@@ -66,17 +68,17 @@ Energy loss is computed as:
 
 Initial Potential Energy − Final Resting Potential Energy
 
-This forms the regression target for machine learning models.
+This serves as the regression target variable.
 
 ---
 
 ## 🔁 Data Generation Pipeline
 
 1. Randomly sample simulation parameters within defined bounds  
-2. Run PyBullet in **DIRECT (headless) mode**  
+2. Run PyBullet in DIRECT (headless) mode  
 3. Compute energy loss  
 4. Store inputs and outputs in a structured dataset  
-5. Repeat for **1000 simulations**
+5. Repeat the process for 1000 simulations  
 
 ---
 
@@ -99,7 +101,7 @@ This forms the regression target for machine learning models.
 
 ## 🤖 Machine Learning Models Used
 
-The problem is formulated as a **regression task**.
+The problem is formulated as a regression task.
 
 Models trained and evaluated:
 
@@ -127,24 +129,39 @@ Each model is evaluated using:
 
 ### 🔹 Model Comparison (RMSE)
 
-Compares predictive performance across models.  
-Lower RMSE indicates better accuracy.
+This graph compares the RMSE values of different regression models.  
+Lower RMSE indicates better predictive performance.
+
+<p align="center">
+  <img src="Graphs/Model_Comparison(RMSE).png" width="650"><br>
+  <em>Figure 1: RMSE comparison across regression models</em>
+</p>
 
 ---
 
-### 🔹 Best Model: Actual vs Predicted
+### 🔹 Best Model: Actual vs Predicted (Random Forest)
 
-The scatter plot shows predicted vs actual energy loss values for the best-performing model.
+The scatter plot shows the relationship between actual and predicted energy loss values for the best-performing model.
 
-Points closer to the diagonal line indicate better performance.
+Points closer to the diagonal line indicate higher prediction accuracy.
+
+<p align="center">
+  <img src="Graphs/Best_Model.png" width="650"><br>
+  <em>Figure 2: Actual vs Predicted Energy Loss (Random Forest)</em>
+</p>
 
 ---
 
-### 🔹 Feature Importance
+### 🔹 Feature Importance (Random Forest)
 
-Displays relative importance of physical parameters in predicting energy loss.
+This visualization highlights the relative importance of each input parameter in predicting energy loss.
 
-Provides interpretability into which physical factors most influence system behavior.
+It provides interpretability into which physical parameters most influence system behavior.
+
+<p align="center">
+  <img src="Graphs/Best_Feature.png" width="650"><br>
+  <em>Figure 3: Feature Importance from Random Forest</em>
+</p>
 
 ---
 
@@ -155,17 +172,18 @@ Provides interpretability into which physical factors most influence system beha
 
 ### 🔍 Key Insight
 
-Ensemble-based non-linear models outperform linear models on physics-based simulation datasets due to their ability to capture complex parameter interactions.
+Ensemble-based non-linear models outperform linear models on physics-based simulation data because they can capture complex parameter interactions.
 
 ---
 
 ## 📓 Notebook
 
-Complete implementation includes:
+The complete implementation includes:
 
 - PyBullet simulation code  
 - Synthetic dataset generation  
-- ML model training & comparison  
+- Machine learning model training  
+- Model comparison  
 - Visualization generation  
 
 📄 `Data_Generation.ipynb`
