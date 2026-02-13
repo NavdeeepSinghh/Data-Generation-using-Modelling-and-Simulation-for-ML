@@ -136,7 +136,7 @@ This graph compares the RMSE values of different machine learning models trained
 Lower RMSE indicates better predictive performance.
 
 <p align="center">
-  <img src="Graphs/Model_Comparison(RMSE).png" width="650"><br>
+  <img src="graph 2.png" width="650"><br>
   <em>Figure 1: RMSE comparison across regression models</em>
 </p>
 
