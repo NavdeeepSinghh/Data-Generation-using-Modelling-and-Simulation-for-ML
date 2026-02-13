@@ -149,7 +149,7 @@ The scatter plot below shows the relationship between actual and predicted energ
 The closer the points lie to the diagonal line, the better the model’s prediction accuracy.
 
 <p align="center">
-  <img src="Graphs/Best_Model.png" width="650"><br>
+  <img src="Screenshot .png" width="650"><br>
   <em>Figure 2: Actual vs Predicted Energy Loss</em>
 </p>
 
