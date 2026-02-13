@@ -162,7 +162,7 @@ This plot highlights the relative importance of each input parameter in predicti
 It provides interpretability by showing which physical parameters most influence the outcome.
 
 <p align="center">
-  <img src="Graphs/Best_Feature.png" width="650"><br>
+  <img src="graph1.png" width="650"><br>
   <em>Figure 3: Feature Importance from Random Forest</em>
 </p>
 
